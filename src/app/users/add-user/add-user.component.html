@@ -1,0 +1,63 @@
+
+<div class="container-fluid add-employee">
+    <div class="row">
+        <div class="col-sm-8 offset-sm-2">
+            <h2>Create new Employee</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8 offset-sm-2">
+            <form [formGroup]="addUserForm" (submit)="createUser()">
+                <div class="container-fluid p-0">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Name</mat-label>
+                                <input matInput placeholder="Name" formControlName="fullName">
+                            </mat-form-field>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Email</mat-label>
+                                <input matInput placeholder="Email" formControlName="email">
+                                <mat-error *ngIf="addUserForm.controls['email'].errors && addUserForm.controls['email'].hasError('required')">
+                                    Email address is required.
+                                </mat-error>
+                                <mat-error *ngIf="addUserForm.controls['email'].errors && addUserForm.controls['email'].hasError('email')">
+                                    Email address is not valid.
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Phone</mat-label>
+                                <input matInput placeholder="mobile" formControlName="mobile">
+                                <mat-error *ngIf="addUserForm.controls['mobile'].errors && addUserForm.controls['mobile'].hasError('required')">
+                                    Mobile number is required.
+                                </mat-error>
+                                <mat-error *ngIf="addUserForm.controls['mobile'].errors && addUserForm.controls['mobile'].hasError('maxlength')">
+                                    Mobile number should be 10 digit max.
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <button mat-raised-button color="primary" [disabled]="!addUserForm.valid">
+                                Create User
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+

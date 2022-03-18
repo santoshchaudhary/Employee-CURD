@@ -1,0 +1,99 @@
+<div class="container-fluid employee-wrap">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 *ngIf="listUsers">Displaying {{listUsers.length}} emloyees</h1>
+            <table mat-table [dataSource]="listUsers" class="mat-elevation-z8">
+                <!-- ID Column -->
+                <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> ID </th>
+                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                </ng-container>
+            
+                <!-- DOB Column -->
+                <ng-container matColumnDef="dob">
+                <th mat-header-cell *matHeaderCellDef> DOB </th>
+                <td mat-cell *matCellDef="let element"> {{element.dob | date}} </td>
+                </ng-container>
+            
+                <!-- Email Column -->
+                <ng-container matColumnDef="email">
+                <th mat-header-cell *matHeaderCellDef> Email </th>
+                <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+                </ng-container>
+            
+                <!-- Gender Column -->
+                <ng-container matColumnDef="gender">
+                <th mat-header-cell *matHeaderCellDef> Gender </th>
+                <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
+                </ng-container>
+
+                <!-- Mobile Column -->
+                <ng-container matColumnDef="mobile">
+                    <th mat-header-cell *matHeaderCellDef> Mobile </th>
+                    <td mat-cell *matCellDef="let element"> {{element.mobile}} </td>
+                </ng-container>
+
+                <!-- Address Column -->
+                <ng-container matColumnDef="address">
+                    <th mat-header-cell *matHeaderCellDef> Address </th>
+                    <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+                </ng-container>
+
+                <!-- Company Column -->
+                <!-- <ng-container matColumnDef="Company">
+                    <th mat-header-cell *matHeaderCellDef> Company </th>
+                    <td mat-cell *matCellDef="let element"> {{element.company}} </td>
+                </ng-container> -->
+
+                <!-- Full Name Column -->
+                <ng-container matColumnDef="fullName">
+                    <th mat-header-cell *matHeaderCellDef> Full Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.fullName}} </td>
+                </ng-container>
+
+                <!-- Position Column -->
+                <!-- <ng-container matColumnDef="position">
+                    <th mat-header-cell *matHeaderCellDef> Position </th>
+                    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                </ng-container> -->
+
+                <!-- Action Column -->
+                <ng-container matColumnDef="action">
+                    <th mat-header-cell *matHeaderCellDef> Action </th>
+                    <td mat-cell *matCellDef="let element">
+                        <a class="" [routerLink]="['/users/view', element.id]" >View</a> |
+                        <a class="" [routerLink]="['/users/edit', element.id]" >Edit</a> |
+                        <a class="" [routerLink]="['/users/delete', element.id]" >Delete</a>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+  
+
+
+
+
+
+<!-- <div class="main-content">
+    <mat-list role="list" *ngFor="let user of listUsers">
+        <mat-list-item role="listitem">
+            <span class="username">{{ user.fullName }}</span>
+            <a class="" [routerLink]="['/users/edit', user.id]" >Edit</a>
+            <a class="" [routerLink]="['/users/delete', user.id]" >Delete</a>
+            <a class="" [routerLink]="['/users/view', user.id]" >View</a>
+        </mat-list-item>
+        
+    </mat-list>
+</div> -->

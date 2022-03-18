@@ -1,0 +1,27 @@
+<h3>Update user</h3>
+<div *ngIf="dataLoaded">
+
+
+    <form [formGroup]="editUserForm" (submit)="updateUser()">
+        <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="fullName" formControlName="fullName">
+            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-hint>Hint</mat-hint> -->
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email" formControlName="email">
+            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-hint>Hint</mat-hint> -->
+        </mat-form-field>
+
+        <!-- <mat-form-field appearance="outline">
+            <mat-label>Phone</mat-label>
+            <input matInput placeholder="mobile" formControlName="mobile">
+        </mat-form-field> -->
+
+        <button mat-raised-button color="primary">Submit</button>
+    </form>
+</div>
