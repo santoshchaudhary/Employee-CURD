@@ -30,10 +30,8 @@ const ELEMENT_DATA: User[] = [
 })
 export class ListComponent implements OnInit {
 
-  displayedColumns: any[] = ['id', 'dob', 'fullName', 'email', 'gender', 'mobile', 'address', 'action'];
+  displayedColumns: any[] = ['id', 'dob', 'fullName', 'email', 'gender', 'mobile', 'address', 'company', 'position', 'action'];
   dataSource = ELEMENT_DATA;
-
-
   listUsers: User[] = [];
   constructor(private _userService: UserService) { }
 

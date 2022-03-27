@@ -1,0 +1,21 @@
+.view-employee {
+    table {
+        text-align: center;
+        border-top: 1px solid lightgray;
+        border-left: 1px solid lightgray;
+        border-right: 1px solid lightgray;
+        thead {
+            th {
+                padding: 20px 0;
+            }
+        }
+        tbody {
+            td {
+                padding: 20px 0;
+            }
+        }
+    }
+    .table>:not(:first-child) {
+        border-top: 1px solid lightgray;
+    }
+}

@@ -40,10 +40,10 @@
                 </ng-container>
 
                 <!-- Company Column -->
-                <!-- <ng-container matColumnDef="Company">
+                <ng-container matColumnDef="company">
                     <th mat-header-cell *matHeaderCellDef> Company </th>
                     <td mat-cell *matCellDef="let element"> {{element.company}} </td>
-                </ng-container> -->
+                </ng-container>
 
                 <!-- Full Name Column -->
                 <ng-container matColumnDef="fullName">
@@ -52,18 +52,18 @@
                 </ng-container>
 
                 <!-- Position Column -->
-                <!-- <ng-container matColumnDef="position">
+                <ng-container matColumnDef="position">
                     <th mat-header-cell *matHeaderCellDef> Position </th>
                     <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-                </ng-container> -->
+                </ng-container>
 
                 <!-- Action Column -->
                 <ng-container matColumnDef="action">
                     <th mat-header-cell *matHeaderCellDef> Action </th>
                     <td mat-cell *matCellDef="let element">
-                        <a class="" [routerLink]="['/users/view', element.id]" >View</a> |
-                        <a class="" [routerLink]="['/users/edit', element.id]" >Edit</a> |
-                        <a class="" [routerLink]="['/users/delete', element.id]" >Delete</a>
+                        <a class="" color="primary" mat-stroked-button [routerLink]="['/users/view', element.id]" >View</a> 
+                        <a class="edit" color="accent"  mat-stroked-button [routerLink]="['/users/edit', element.id]" >Edit</a> 
+                        <a class="" color="warn" mat-stroked-button [routerLink]="['/users/delete', element.id]" >Delete</a>
                     </td>
                 </ng-container>
 

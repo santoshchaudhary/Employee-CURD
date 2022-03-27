@@ -1,2 +1,38 @@
-<p>view-user works!</p>
-<mat-card *ngIf="userDetails">{{ userDetails.fullName }}</mat-card>
+<div class="container-fluid view-employee">
+    <div class="row">
+        <div class="col-12">
+            <h2>View Employee</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table">
+                <thead class="table-light">
+                    <th>ID</th>
+                    <th>DOB</th>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Gender</th>
+                    <th>Mobile</th>
+                    <th>Address</th>
+                    <th>Company</th>
+                    <th>Position</th>
+                </thead>
+                <tbody>
+                    <tr *ngIf="userDetails">
+                        <td>{{ userDetails.id }}</td>
+                        <td>{{ userDetails.dob }}</td>
+                        <td>{{ userDetails.fullName }}</td>
+                        <td>{{ userDetails.email }}</td>
+                        <td>{{ userDetails.gender }}</td>
+                        <td>{{ userDetails.mobile }}</td>
+                        <td>{{ userDetails.address }}</td>
+                        <td>{{ userDetails.company }}</td>
+                        <td>{{ userDetails.position }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
